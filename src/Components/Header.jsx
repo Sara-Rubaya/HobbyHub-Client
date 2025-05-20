@@ -19,7 +19,7 @@ const Navbar = () => {
   const links = (
     <>
       <li><NavLink to="/">Home</NavLink></li>
-      <li><NavLink to="/groups">All Groups</NavLink></li>
+      <li><NavLink to="/allGroups">All Groups</NavLink></li>
       {user && (
         <>
           <li><NavLink to="/createGroup">Create Group</NavLink></li>
@@ -46,7 +46,7 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <h1 className='text-2xl font-bold'>HobbyHub</h1>
+        <h1 className='text-2xl text-gray-700 font-bold'>HobbyHub</h1>
       </div>
 
       {/* Navbar Center */}

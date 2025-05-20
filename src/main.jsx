@@ -14,6 +14,7 @@ import Details from './Pages/Details.jsx';
 import AuthProvider from './Context/AuthProvider.jsx';
 import Login from './Components/Login/Login.jsx';
 import Register from './Components/Register/Register.jsx';
+import AllGroups from './Components/AllGroups/AllGroups.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
     {
       path:'register',
       Component:Register
+    },
+    {
+      path:'allGroups',
+      Component:AllGroups
     }
    ]
   },
