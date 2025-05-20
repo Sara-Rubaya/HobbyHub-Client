@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router';
 
 const AllGroups = () => {
   const [groups, setGroups] = useState([]);
@@ -35,9 +36,11 @@ const AllGroups = () => {
                 <p><strong>Max Members:</strong> {group.maxMembers}</p>
               </div>
               <div className="card-actions justify-end mt-4">
+                <Link to={`/group/${group._id}`}>
                 <button className="btn btn-sm bg-gray-700 text-white hover:bg-gray-800">
-                  Join Group
+                  Details
                 </button>
+                </Link>
               </div>
             </div>
           </div>

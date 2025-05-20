@@ -10,11 +10,13 @@ import MainLayout from './Layouts/MainLayout.jsx';
 import Home from './Components/Home.jsx';
 import AddHobby from './Components/AddHobby.jsx';
 import UpdateHobby from './Components/UpdateHobby.jsx';
-import Details from './Pages/Details.jsx';
+
 import AuthProvider from './Context/AuthProvider.jsx';
 import Login from './Components/Login/Login.jsx';
 import Register from './Components/Register/Register.jsx';
 import AllGroups from './Components/AllGroups/AllGroups.jsx';
+import GroupDetails from './Components/GroupDetails/GroupDetails.jsx';
+import CreateGroup from './Components/Create Group/CreateGroup.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -32,10 +34,7 @@ const router = createBrowserRouter([
       path:'updateHobby',
       Component:UpdateHobby,
     },
-    {
-      path:'details',
-      Component:Details,
-    },
+    
     {
       path:'login',
       Component:Login
@@ -47,6 +46,14 @@ const router = createBrowserRouter([
     {
       path:'allGroups',
       Component:AllGroups
+    },
+    {
+       path:'/group/:id',
+        element:<GroupDetails/>
+    },
+    {
+      path:'createGroup',
+     Component: CreateGroup
     }
    ]
   },
