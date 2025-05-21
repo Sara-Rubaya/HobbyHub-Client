@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 
 import swal from "sweetalert";
-import { useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../../Context/AuthContext";
 
 const MyGroups = () => {
@@ -90,12 +90,14 @@ const MyGroups = () => {
               <td className="border px-4 py-2">{group.startDate}</td>
               <td className="border px-4 py-2">{group.maxMembers}</td>
               <td className="border px-4 py-2 text-center space-x-2">
+               <Link to="/updateGroup">
                 <button
                   onClick={() => handleUpdate(group._id)}
                   className="btn btn-sm btn-primary bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded"
                 >
                   Update
                 </button>
+               </Link>
                 <button
                   onClick={() => handleDelete(group._id)}
                   className="btn btn-sm btn-danger bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded"

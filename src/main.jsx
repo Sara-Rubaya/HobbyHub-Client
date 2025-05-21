@@ -19,6 +19,8 @@ import GroupDetails from './Components/GroupDetails/GroupDetails.jsx';
 import CreateGroup from './Components/Create Group/CreateGroup.jsx';
 import PrivateRoute from './Routes/PrivateRoute.jsx';
 import MyGroups from './Components/MyGroups/MyGroups.jsx';
+import AboutUs from './Components/AboutUs/AboutUs.jsx';
+import UpdateGroup from './Components/UpdateGroup.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -58,7 +60,19 @@ const router = createBrowserRouter([
     },
    {
     path:'myGroups',
-    Component: MyGroups
+    element:<PrivateRoute>
+      <MyGroups></MyGroups>
+    </PrivateRoute>
+   },
+   {
+    path:'aboutUs',
+    Component: AboutUs
+   },
+   {
+    path:'updateGroup',
+    element: <PrivateRoute>
+      <UpdateGroup></UpdateGroup>
+    </PrivateRoute>
    }
    ]
   },
