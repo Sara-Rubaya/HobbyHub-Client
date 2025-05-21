@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 import Swal from 'sweetalert2';
 
@@ -53,7 +54,9 @@ const GroupCard = ({ group, groups, setGroups }) => {
         <p><strong>Max members:</strong> {maxMembers}</p>
         <div className="card-actions mx-auto pt-4">
           <div className="join gap-3">
-            <button className="btn join-item">View</button>
+            <Link to={`/group/${_id}`}>
+                <button className="btn join-item">View</button>
+            </Link>
             <button className="btn join-item">Edit</button>
             <button onClick={() => handleDelete(_id)} className="btn join-item">Delete</button>
           </div>
