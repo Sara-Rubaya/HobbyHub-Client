@@ -97,7 +97,7 @@ const CreateGroup = () => {
         <input type="text" value={user?.displayName || 'Anonymous'} readOnly className="input input-bordered w-full bg-gray-100" />
         <input type="email" value={user?.email} readOnly className="input input-bordered w-full bg-gray-100" />
 
-        <button type="submit" className="btn bg-gray-700 text-white hover:bg-gray-800 w-full">
+        <button type="submit" className="btn btn-wide mx-auto bg-gray-700 text-white hover:bg-gray-800 ">
           Create Group
         </button>
       </form>

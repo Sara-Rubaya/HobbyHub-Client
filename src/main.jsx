@@ -8,9 +8,6 @@ import {
 } from "react-router";
 import MainLayout from './Layouts/MainLayout.jsx';
 import Home from './Components/Home.jsx';
-import AddHobby from './Components/AddHobby.jsx';
-
-
 import AuthProvider from './Context/AuthProvider.jsx';
 import Login from './Components/Login/Login.jsx';
 import Register from './Components/Register/Register.jsx';
@@ -28,14 +25,10 @@ const router = createBrowserRouter([
    children:[
     {
       index:true,
+      loader: () => fetch('http://localhost:3000/groups'),
       Component:Home
     },
-    {
-      path:'addHobby',
-      Component:AddHobby,
-    },
    
-    
     {
       path:'login',
       Component:Login
@@ -73,7 +66,12 @@ const router = createBrowserRouter([
     element: <PrivateRoute>
       <UpdateGroup></UpdateGroup>
     </PrivateRoute>
+   },
+   {
+    path:'groupDetails',
+    Component:GroupDetails
    }
+
    ]
   },
 ]);
