@@ -11,7 +11,7 @@ import Home from './Components/Home.jsx';
 import AuthProvider from './Context/AuthProvider.jsx';
 import Login from './Components/Login/Login.jsx';
 import Register from './Components/Register/Register.jsx';
-import AllGroups from './Components/AllGroups/AllGroups.jsx';
+
 import GroupDetails from './Components/GroupDetails/GroupDetails.jsx';
 import CreateGroup from './Components/Create Group/CreateGroup.jsx';
 import PrivateRoute from './Routes/PrivateRoute.jsx';
@@ -37,10 +37,7 @@ const router = createBrowserRouter([
       path:'register',
       Component:Register
     },
-    {
-      path:'allGroups',
-      Component:AllGroups
-    },
+  
     {
        path:'/group/:id',
        element:<PrivateRoute>
