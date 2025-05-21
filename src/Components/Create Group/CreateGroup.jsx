@@ -67,7 +67,7 @@ const CreateGroup = () => {
   };
 
   return (
-    <div className="max-w-2xl mx-auto px-6 py-10 bg-white rounded shadow">
+    <div className="max-w-2xl mx-auto px-6 my-10 py-10 bg-white rounded shadow">
       <h2 className="text-3xl font-bold text-center mb-8">Create a New Group</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <input name="groupName" type="text" value={formData.groupName} onChange={handleChange}
@@ -97,7 +97,7 @@ const CreateGroup = () => {
         <input type="text" value={user?.displayName || 'Anonymous'} readOnly className="input input-bordered w-full bg-gray-100" />
         <input type="email" value={user?.email} readOnly className="input input-bordered w-full bg-gray-100" />
 
-        <button type="submit" className="btn btn-wide mx-auto bg-gray-700 text-white hover:bg-gray-800 ">
+        <button type="submit" className="btn btn-wide ml-44 mx-auto bg-gray-700 text-white hover:bg-gray-800 ">
           Create Group
         </button>
       </form>

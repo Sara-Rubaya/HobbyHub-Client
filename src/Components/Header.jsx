@@ -25,7 +25,7 @@ const Navbar = () => {
         <>
           <li><NavLink to="/createGroup">Create Group</NavLink></li>
           <li><NavLink to="/myGroups">My Groups</NavLink></li>
-          <li><NavLink to="/profile">Profile</NavLink></li>
+         
         </>
       )}
     </>

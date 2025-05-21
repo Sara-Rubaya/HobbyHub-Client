@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
-import { useLoaderData } from 'react-router';
+import { Links, useLoaderData } from 'react-router';
 import { AuthContext } from '../Context/AuthContext';
+import Swal from 'sweetalert2';
+import { Link } from 'react-router';
 
 const UpdateGroup = () => {
     const { user } = useContext(AuthContext);
@@ -28,7 +30,14 @@ const UpdateGroup = () => {
     })
     .then(res => res.json())
     .then(data => {
-      console.log('after update', data)
+      console.log('after update', data);
+      Swal.fire({
+    icon: 'success',
+    title: 'Group Updated!',
+    text: 'Your group information has been successfully updated.',
+    confirmButtonColor: '#3085d6',
+    confirmButtonText: 'OK'
+  });
     })
   }
 
@@ -75,9 +84,16 @@ const UpdateGroup = () => {
         <input type="text" value={user?.displayName || 'Anonymous'} readOnly className="input input-bordered w-full bg-gray-100" />
         <input type="email" value={user?.email} readOnly className="input input-bordered w-full bg-gray-100" />
 
-        <button type="submit" className="btn btn-wide mx-auto bg-gray-700 text-white hover:bg-gray-800 ">
+        
+       <div className=''>
+         <button type="submit" className="btn btn-wide mr-14 mx-auto bg-gray-700 text-white hover:bg-gray-800 ">
           Update Group
         </button>
+         
+         <Link to="/">
+         <button  className="btn btn-wide ml-14 mx-auto bg-gray-700 text-white hover:bg-gray-800 ">Home</button>
+         </Link>
+       </div>
       </form>
     </div>
   );
