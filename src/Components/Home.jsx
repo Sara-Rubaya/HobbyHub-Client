@@ -43,6 +43,8 @@ const Home = () => {
       <div>
         <WhyJoin />
       </div>
+
+      
     </div>
   );
 };

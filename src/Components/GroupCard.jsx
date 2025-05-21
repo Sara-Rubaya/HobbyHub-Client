@@ -17,8 +17,12 @@ const GroupCard = ({group}) => {
     <h3><strong>Category:</strong> {category}</h3>
     <p><strong>Description:</strong> {description}</p>
     <p><strong>Max members:</strong> {maxMembers}</p>
-    <div className="card-actions justify-end">
-      <Link  to={`/group/${group._id}`}><button className="btn btn-primary">Details</button></Link>
+    <div className="card-actions mx-auto pt-4">
+      <div className="join gap-3">
+  <button className="btn join-item">View</button>
+  <button className="btn join-item">Edit</button>
+  <button className="btn join-item">Delete</button>
+</div>
     </div>
   </div>
 
