@@ -57,7 +57,9 @@ const GroupCard = ({ group, groups, setGroups }) => {
             <Link to={`/group/${_id}`}>
                 <button className="btn join-item">View</button>
             </Link>
-            <button className="btn join-item">Edit</button>
+            <Link to={`/updateGroup/${group._id}`}>
+              <button className="btn join-item">Edit</button>
+            </Link>
             <button onClick={() => handleDelete(_id)} className="btn join-item">Delete</button>
           </div>
         </div>

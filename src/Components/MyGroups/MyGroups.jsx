@@ -1,14 +1,13 @@
 import React, { useEffect, useState, useContext } from "react";
-
-import swal from "sweetalert";
-import { Link, useNavigate } from "react-router";
+import { Link } from "react-router";
 import { AuthContext } from "../../Context/AuthContext";
+import Swal from "sweetalert2";
 
 const MyGroups = () => {
   const { user } = useContext(AuthContext);
   const [groups, setGroups] = useState([]);
   const [loading, setLoading] = useState(true);
-  const navigate = useNavigate();
+ 
 
   useEffect(() => {
     if (!user) {
@@ -33,37 +32,9 @@ const MyGroups = () => {
     fetchUserGroups();
   }, [user]);
 
-  const handleDelete = (groupId) => {
-    swal({
-      title: "Are you sure?",
-      text: "Once deleted, you will not be able to recover this group!",
-      icon: "warning",
-      buttons: ["Cancel", "Delete"],
-      dangerMode: true,
-    }).then(async (willDelete) => {
-      if (willDelete) {
-        try {
-          const res = await fetch(`http://localhost:3000/groups/${groupId}`, {
-            method: "DELETE",
-          });
-          const data = await res.json();
-          if (data.success) {
-            swal("Deleted!", "Your group has been deleted.", "success");
-            // Remove deleted group from state
-            setGroups((prev) => prev.filter((g) => g._id !== groupId));
-          } else {
-            swal("Oops!", data.message || "Failed to delete group.", "error");
-          }
-        } catch (error) {
-          swal("Error", "Something went wrong during deletion.", error);
-        }
-      }
-    });
-  };
+ 
 
-  const handleUpdate = (groupId) => {
-    navigate(`/updateGroup/${groupId}`);
-  };
+
 
   if (loading) return <div className="text-center mt-12">Loading your groups...</div>;
   if (!groups.length) return <div className="text-center mt-12">You have no groups created.</div>;
@@ -90,20 +61,12 @@ const MyGroups = () => {
               <td className="border px-4 py-2">{group.startDate}</td>
               <td className="border px-4 py-2">{group.maxMembers}</td>
               <td className="border px-4 py-2 text-center space-x-2">
-               <Link to="/updateGroup">
-                <button
-                  onClick={() => handleUpdate(group._id)}
-                  className="btn btn-sm btn-primary bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded"
-                >
+               <Link to={`/updateGroup/${group._id}`}>
+                <button className="btn btn-sm btn-primary bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded">
                   Update
                 </button>
                </Link>
-                <button
-                  onClick={() => handleDelete(group._id)}
-                  className="btn btn-sm btn-danger bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded"
-                >
-                  Delete
-                </button>
+                
               </td>
             </tr>
           ))}
