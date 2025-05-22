@@ -1,10 +1,20 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Banner from './Banner';
 import WhyJoin from './WhyJoin/WhyJoin';
-import { useLoaderData } from 'react-router';
+import { useLoaderData, useLocation } from 'react-router';
 import GroupCard from './GroupCard';
 
 const Home = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash === '#groups') {
+      const section = document.getElementById('groupsSection');
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [location]);
   const groups = useLoaderData();
   const [showAll, setShowAll] = useState(false);
 
@@ -18,7 +28,7 @@ const Home = () => {
       </div>
 
       <div>
-        <h2 className="text-3xl font-bold text-center mb-8">
+        <h2 id="groupsSection" className="text-3xl font-bold text-center mb-8">
           Explore Our <span className="text-gray-500">Groups</span>
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
