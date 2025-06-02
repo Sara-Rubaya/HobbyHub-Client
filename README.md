@@ -1,12 +1,29 @@
-# React + Vite
+# 🎯 HobbyHub
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**HobbyHub** is a web application where users can discover, create, and join hobby-based groups in their local area. Whether it's painting, hiking, cooking, coding, or any other interest — HobbyHub connects people who share the same passion.
 
-Currently, two official plugins are available:
+## 📝 Description
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+HobbyHub allows users to easily explore and engage with local hobby communities. Authenticated users can create new groups, update or delete their own groups, and join other groups to collaborate and share ideas. This platform promotes creativity, connection, and community engagement.
 
-## Expanding the ESLint configuration
+## 🔗 Live Website
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+[Visit HobbyHub on Netlify](https://your-netlify-url.netlify.app)
+
+## ✨ Features
+
+- 🔐 Login/Register with Email & Google
+- 🧑‍🤝‍🧑 View and join hobby groups
+- ✍️ Create, edit, and delete your own groups
+- 🛡️ Private/protected routes for personalized access
+- 💬 Leave comments and see related groups
+- 🔔 Toast & alert notifications for user feedback
+
+## 🔧 Technologies Used
+
+- React
+- Firebase Authentication
+- Tailwind CSS + DaisyUI
+- React Router
+- JSON Server (mock API)
+- React Toastify & SweetAlert2
