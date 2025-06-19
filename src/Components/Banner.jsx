@@ -19,12 +19,12 @@ const Banner = () => {
         />
         <div>
           
-          <span className="text-5xl font-bold text-gray-700">{text}</span>
-          <p className="py-6 text-gray-600">
+          <span className="text-5xl font-bold ">{text}</span>
+          <p className="py-6 ">
             Join like-minded people, explore your passions, and create meaningful connections. Discover hobby groups, share your experiences, and grow together!
           </p>
-          <Link to="/*">
-            <button className="btn btn-primary bg-gray-700 hover:bg-gray-800 text-white">
+          <Link to="/all-groups">
+            <button className="btn btn-primary hover:bg-gray-800 text-white">
               Explore Groups
             </button>
           </Link>

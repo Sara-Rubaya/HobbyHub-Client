@@ -18,7 +18,7 @@ const MyGroups = () => {
 
     const fetchUserGroups = async () => {
       try {
-        const res = await fetch(`http://localhost:3000/groups?creatorEmail=${user.email}`);
+        const res = await fetch(`https://hobby-hub-server-rho.vercel.app/groups?creatorEmail=${user.email}`);
        
         const data = await res.json();
         setGroups(data);

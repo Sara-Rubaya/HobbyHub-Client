@@ -18,6 +18,7 @@ import PrivateRoute from './Routes/PrivateRoute.jsx';
 import MyGroups from './Components/MyGroups/MyGroups.jsx';
 import AboutUs from './Components/AboutUs/AboutUs.jsx';
 import UpdateGroup from './Components/UpdateGroup.jsx';
+import AllGroups from './Components/AllGroups.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -25,8 +26,13 @@ const router = createBrowserRouter([
    children:[
     {
       index:true,
-      loader: () => fetch('http://localhost:3000/groups'),
+      loader: () => fetch('https://hobby-hub-server-rho.vercel.app/groups'),
       Component:Home
+    },
+    {
+      path: '/all-groups',
+      loader:() => fetch('https://hobby-hub-server-rho.vercel.app/groups'),
+      Component: AllGroups
     },
    
     {
@@ -40,7 +46,7 @@ const router = createBrowserRouter([
   
     {
        path:'/group/:id',
-       loader: ({params}) => fetch(`http://localhost:3000/groups/${params.id}`),
+       loader: ({params}) => fetch(`https://hobby-hub-server-rho.vercel.app/groups/${params.id}`),
        element:<PrivateRoute>
         <GroupDetails></GroupDetails>
        </PrivateRoute>
@@ -61,7 +67,7 @@ const router = createBrowserRouter([
    },
    {
     path:'updateGroup/:id',
-    loader: ({params}) => fetch(`http://localhost:3000/groups/${params.id}`),
+    loader: ({params}) => fetch(`https://hobby-hub-server-rho.vercel.app/groups/${params.id}`),
     element: <PrivateRoute>
       <UpdateGroup></UpdateGroup>
     </PrivateRoute>

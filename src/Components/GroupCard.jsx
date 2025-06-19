@@ -21,7 +21,7 @@ const GroupCard = ({ group, groups, setGroups }) => {
             console.log(result.isConfirmed)
             if (result.isConfirmed) {
 
-        fetch(`http://localhost:3000/groups/${_id}`, {
+        fetch(`https://hobby-hub-server-rho.vercel.app/groups/${_id}`, {
           method: 'DELETE'
         })
           .then(res => res.json())

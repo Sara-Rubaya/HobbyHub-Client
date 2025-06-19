@@ -21,7 +21,7 @@ const UpdateGroup = () => {
     console.log(updatedGroup);
 
     //update group info in the db
-    fetch(`http://localhost:3000/groups/${group._id}`,{
+    fetch(`https://hobby-hub-server-rho.vercel.app/groups/${group._id}`,{
       method: 'PUT',
       headers:{
         'Content-Type': 'application/json'

@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import Banner from './Banner';
 import WhyJoin from './WhyJoin/WhyJoin';
-import { useLoaderData, useLocation } from 'react-router';
+import { Link, useLoaderData, useLocation } from 'react-router';
 import GroupCard from './GroupCard';
+import MemberAchievements from './Achievements/ MemberAchievements';
 
 const Home = () => {
   const location = useLocation();
@@ -16,10 +17,10 @@ const Home = () => {
     }
   }, [location]);
   const groups = useLoaderData();
-  const [showAll, setShowAll] = useState(false);
 
 
-  const displayedGroups = showAll ? groups : groups.slice(0, 3);
+
+  const displayedGroups = groups.slice(0, 6);
 
   return (
     <div className='mx-auto p-10'>
@@ -27,6 +28,7 @@ const Home = () => {
         <Banner />
       </div>
 
+       {/* GROUPS */}
       <div>
         <h2 id="groupsSection" className="text-3xl font-bold text-center mb-8">
           Explore Our <span className="text-gray-500">Groups</span>
@@ -38,16 +40,20 @@ const Home = () => {
         </div>
 
         {/* Show More / Show Less button */}
-        {groups.length > 3 && (
+        
           <div className="text-center mt-8">
-            <button
-              onClick={() => setShowAll(!showAll)}
+            <Link to='/all-groups'><button
+              
               className="btn bg-gray-800 text-white hover:bg-gray-900 px-6"
-            >
-              {showAll ? 'Show Less' : 'Show More'}
-            </button>
+            >Show More</button></Link>
           </div>
-        )}
+        
+      </div>
+
+
+      {/* Achievements */}
+      <div>
+        <MemberAchievements></MemberAchievements>
       </div>
 
       <div>

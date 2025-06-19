@@ -1,11 +1,11 @@
-import React, { use, useState } from 'react';
+import React, {  useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router';
 import { AuthContext } from '../../Context/AuthContext';
 
 const Login = () => {
 
 
-    const { signInUser, googleSignIn  } = use(AuthContext);
+    const { signInUser, googleSignIn  } = useContext(AuthContext);
 
     const navigate = useNavigate();
     
@@ -16,7 +16,7 @@ const Login = () => {
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
-        console.log(email,password);
+        // console.log(email,password);
 
 
         //login user
