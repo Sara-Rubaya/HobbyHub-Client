@@ -19,6 +19,7 @@ import MyGroups from './Components/MyGroups/MyGroups.jsx';
 import AboutUs from './Components/AboutUs/AboutUs.jsx';
 import UpdateGroup from './Components/UpdateGroup.jsx';
 import AllGroups from './Components/AllGroups.jsx';
+import Error from './Components/error.jsx';
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       index:true,
       loader: () => fetch('https://hobby-hub-server-rho.vercel.app/groups'),
       Component:Home
+    },
+    {
+      path:'/*',
+      Component: Error
     },
     {
       path: '/all-groups',
