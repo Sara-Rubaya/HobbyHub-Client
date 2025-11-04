@@ -31,23 +31,43 @@ const Home = () => {
 
        {/* GROUPS */}
       <div>
-        <h2 id="groupsSection" className="text-3xl font-bold text-center mb-8">
-          Explore Our <span className="text-gray-500">Groups</span>
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {displayedGroups.map(group => (
-            <GroupCard key={group._id} group={group} />
-          ))}
-        </div>
+        <div data-aos="fade-up" className="mt-16">
+  <h2
+    id="groupsSection"
+    data-aos="fade-up"
+    className="text-3xl font-bold text-center mb-8"
+  >
+    Explore Our <span className="text-blue-500">Groups</span>
+  </h2>
+
+  <div
+    data-aos="fade-up"
+    data-aos-delay="100"
+    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+  >
+    {displayedGroups.map((group, index) => (
+      <div data-aos="zoom-in" data-aos-delay={index * 100} key={group._id}>
+        <GroupCard group={group} />
+      </div>
+    ))}
+  </div>
+</div>
+
 
         {/* Show More / Show Less button */}
         
-          <div className="text-center mt-8">
-            <Link to='/all-groups'><button
-              
-              className="btn bg-gray-800 text-white hover:bg-gray-900 px-6"
-            >Show More</button></Link>
-          </div>
+          <div className="text-center mt-8" >
+  <Link to="/all-groups">
+    <button
+      className="btn bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold px-8 py-3 rounded-lg 
+                 transition-all duration-300 transform hover:scale-110 hover:shadow-lg 
+                 hover:from-blue-500 hover:to-cyan-500"
+    >
+      Show More
+    </button>
+  </Link>
+</div>
+
         
       </div>
 

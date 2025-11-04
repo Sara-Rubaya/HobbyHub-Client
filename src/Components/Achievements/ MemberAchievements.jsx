@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { FaMedal, FaStar, FaHeart } from "react-icons/fa";
 
 const mockAchievements = [
@@ -35,17 +37,19 @@ const MemberAchievements = () => {
   const [achievements, setAchievements] = useState([]);
 
   useEffect(() => {
-    
+    // Initialize AOS
+    AOS.init({ duration: 800, once: true });
     setAchievements(mockAchievements);
   }, []);
 
   return (
     <section className="max-w-5xl mx-auto py-10 px-4">
-      <h2 className="text-5xl font-bold text-center text-gray-700 mb-8">🏆 Member Achievements</h2>
+      <h2 className="text-5xl font-bold text-center text-blue-600 mb-12 my-20">🏆 Member Achievements</h2>
       <div className="grid md:grid-cols-3 gap-6">
         {achievements.map((member, i) => (
           <div
             key={i}
+            data-aos="fade-up"
             className="bg-blue-300 shadow-md rounded-2xl p-6 flex flex-col items-center text-center"
           >
             <img

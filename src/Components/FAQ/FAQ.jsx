@@ -31,9 +31,9 @@ export default function FAQSection() {
   ];
 
   return (
-    <section className="max-w-7xl mx-auto px-4 py-12 ">
+    <section className="max-w-7xl mx-auto my-20 px-4 py-12 ">
       <h2
-        className="text-5xl font-bold text-center mb-8 text-gray-700"
+        className="text-5xl font-bold text-center mb-12 text-blue-700 "
         data-aos="fade-up"
       >
         Frequently Asked Questions
@@ -42,7 +42,7 @@ export default function FAQSection() {
         {faqs.map((faq, index) => (
           <details
             key={index}
-            className="group  shadow-md rounded-2xl p-8 bg-blue-300"
+            className="group text-white  shadow-md rounded-2xl p-8 bg-blue-400"
             data-aos="fade-up"
             data-aos-delay={index * 100}
           >
@@ -50,7 +50,7 @@ export default function FAQSection() {
               {faq.question}
               <span className="transition-transform group-open:rotate-45 text-2xl">+</span>
             </summary>
-            <p className="mt-3 text-gray-600">{faq.answer}</p>
+            <p className="mt-3 text-white">{faq.answer}</p>
           </details>
         ))}
       </div>
