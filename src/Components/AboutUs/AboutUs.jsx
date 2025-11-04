@@ -2,11 +2,11 @@ import React from 'react';
 
 const AboutUs = () => {
   return (
-    <div className="max-w-5xl mx-auto px-6 py-12 text-gray-800">
+    <div className="max-w-5xl mx-auto px-6 py-12 text-base-400">
       <h1 className="text-4xl font-bold text-center mb-8 text-indigo-400">About Us</h1>
 
       <p className="text-lg mb-6 text-center">
-        <strong>Welcome to <span className='text-2xl text-gray-600 underline'>HobbyHub</span></strong> — your community for curiosity, creativity, and connection.
+        <strong>Welcome to <span className='text-2xl text-base-600 underline'>HobbyHub</span></strong> — your community for curiosity, creativity, and connection.
       </p>
 
       <p className="mb-4">

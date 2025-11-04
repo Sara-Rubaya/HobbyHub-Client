@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect} from 'react';
 import Banner from './Banner';
 import WhyJoin from './WhyJoin/WhyJoin';
 import { Link, useLoaderData, useLocation } from 'react-router';
 import GroupCard from './GroupCard';
 import MemberAchievements from './Achievements/ MemberAchievements';
+import FAQ from './FAQ/FAQ';
 
 const Home = () => {
   const location = useLocation();
@@ -58,6 +59,9 @@ const Home = () => {
 
       <div>
         <WhyJoin />
+      </div>
+      <div>
+        <FAQ></FAQ>
       </div>
 
       

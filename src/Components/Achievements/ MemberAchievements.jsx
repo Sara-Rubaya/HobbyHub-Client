@@ -41,12 +41,12 @@ const MemberAchievements = () => {
 
   return (
     <section className="max-w-5xl mx-auto py-10 px-4">
-      <h2 className="text-3xl font-bold text-center text-gray-700 mb-8">🏆 Member Achievements</h2>
+      <h2 className="text-5xl font-bold text-center text-gray-700 mb-8">🏆 Member Achievements</h2>
       <div className="grid md:grid-cols-3 gap-6">
         {achievements.map((member, i) => (
           <div
             key={i}
-            className="bg-white shadow-md rounded-2xl p-6 flex flex-col items-center text-center"
+            className="bg-blue-300 shadow-md rounded-2xl p-6 flex flex-col items-center text-center"
           >
             <img
               src={member.photo}
