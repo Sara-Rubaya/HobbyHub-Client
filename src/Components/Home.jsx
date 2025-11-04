@@ -5,6 +5,7 @@ import { Link, useLoaderData, useLocation } from 'react-router';
 import GroupCard from './GroupCard';
 import MemberAchievements from './Achievements/ MemberAchievements';
 import FAQ from './FAQ/FAQ';
+import ContactUs from './ContactUs/ContactUs';
 
 const Home = () => {
   const location = useLocation();
@@ -82,6 +83,9 @@ const Home = () => {
       </div>
       <div>
         <FAQ></FAQ>
+      </div>
+      <div>
+        <ContactUs></ContactUs>
       </div>
 
       
