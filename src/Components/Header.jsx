@@ -101,7 +101,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar bg-blue-100 shadow-sm px-10">
+    <div className="navbar bg-base-100 shadow-sm px-10">
       {/* Navbar Start */}
       <div className="navbar-start">
         <div className="dropdown">
@@ -134,48 +134,65 @@ const Navbar = () => {
       </div>
 
       {/* Navbar End */}
-      <div className="navbar-end gap-5">
-        {user ? (
-          <>
-            <span className="text-sm text-blue-800">{user.email}</span>
-            <div className="dropdown dropdown-end">
-              <div
-                tabIndex={0}
-                role="button"
-                className="btn btn-ghost btn-circle avatar tooltip mr-4"
-                data-tip={user.displayName}
-              >
-                <div className="w-10 rounded-full ml-2">
-                  <img alt="User" src={user.photoURL || "/default-avatar.png"} />
-                </div>
-              </div>
+       <div className="navbar-end gap-5">
+  {user ? (
+    <div className="flex items-center gap-4">
+      {/* Avatar with hover name */}
+      <div className="relative group">
+        <div
+          tabIndex={0}
+          role="button"
+          className="btn btn-ghost btn-circle avatar"
+        >
+          <div className="w-10 rounded-full">
+            <img
+              alt="User"
+              src={
+                user.photoURL ||
+                "https://i.ibb.co/QvYYmvrC/default-avatar-profile-icon-of-social-media-user-vector.jpg"
+              }
+            />
+          </div>
+        </div>
 
-              <Link to="/login">
-                <button onClick={handleSignOut}>
-                  <a
-                    href="#_"
-                    className="inline-flex items-center px-6 py-2 text-gray-500 bg-gray-100 rounded-md hover:bg-gray-200 hover:text-gray-600"
-                  >
-                    Log Out
-                  </a>
-                </button>
-              </Link>
-            </div>
-          </>
-        ) : (
-          <Link to="/login">
-            <a
-              href="#_"
-              className="inline-flex items-center px-6 py-2 bg-blue-500 rounded-md hover:bg-blue-400 text-white"
-            >
-              Login
-            </a>
-          </Link>
-        )}
+        {/* Name on hover */}
+        <div className="absolute left-1/2 transform -translate-x-1/2 mt-2 px-3 py-1 bg-white shadow rounded-md text-blue-800 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
+          {user.displayName || user.email}
+        </div>
+      </div>
+
+      {/* User email */}
+      <span className="text-sm text-blue-800 hidden md:inline">{user.email}</span>
+
+      {/* Log Out button */}
+      <button
+        onClick={handleSignOut}
+        className="inline-flex items-center px-2 py-2 mx-2   bg-blue-500 text-white  rounded-md hover:bg-blue-400 hover:text-white"
+      >
+        Log Out
+      </button>
+    </div>
+  ) : (
+    <Link
+      to="/login"
+      className="inline-flex items-center px-4 py-2 mx-2 bg-blue-500 rounded-md hover:bg-blue-400 text-white"
+    >
+      Login
+    </Link>
+  )}
+</div>
+
+
   
- <label className="swap swap-rotate">
-  {/* this hidden checkbox controls the state */}
-  <input type="checkbox" className="theme-controller" value="synthwave" />
+<label className="swap swap-rotate">
+  {/* checkbox now controlled by theme state */}
+  <input
+    type="checkbox"
+    className="theme-controller"
+    value="synthwave"
+    onChange={handleToggle}
+    checked={theme === "dark"}   // ✅ bind to theme state
+  />
 
   {/* sun icon */}
   <svg
@@ -198,8 +215,9 @@ const Navbar = () => {
 
 
 
+
       </div>
-    </div>
+   
   );
 };
 

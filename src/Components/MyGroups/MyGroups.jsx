@@ -53,15 +53,15 @@ const MyGroups = () => {
   if (loading) return <div className="text-center py-10 text-lg">Loading your groups...</div>;
 
   return (
-    <div className='m-10'>
-      <h1 className='text-4xl font-bold text-center text-teal-700 mb-8'>My Created Groups</h1>
+    <div className='m-10 mb-25'>
+      <h1 className='text-4xl font-bold text-center mb-8'>My Created Groups</h1>
 
       {groups.length === 0 ? (
         <p className="text-center text-gray-600 text-lg mt-10">You haven't created any groups yet.</p>
       ) : (
         <div className="overflow-x-auto">
           <table className="table w-full border">
-            <thead className="bg-gray-100 text-gray-800 font-semibold">
+            <thead className="bg-blue-200 text-gray-800 font-semibold">
               <tr>
                 <th className="px-4 py-2">Group Name</th>
                 <th className="px-4 py-2">Category</th>
