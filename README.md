@@ -8,7 +8,7 @@ HobbyHub allows users to easily explore and engage with local hobby communities.
 
 ## 🔗 Live Website
 
-[Visit HobbyHub on Netlify](https://chic-bunny-357f50.netlify.app/)
+[Visit HobbyHub on Netlify](https://hobbyhub-1.netlify.app/)
 
 ## ✨ Features
 
