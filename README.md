@@ -8,7 +8,7 @@ HobbyHub allows users to easily explore and engage with local hobby communities.
 
 ## 🔗 Live Website
 
-[Visit HobbyHub on Netlify](https://hobbyhub-1.netlify.app/)
+[Visit HobbyHub on Netlify](https://gleaming-phoenix-d1b442.netlify.app/)
 
 ## ✨ Features
 
